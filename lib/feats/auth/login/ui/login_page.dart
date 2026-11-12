@@ -3,6 +3,7 @@ import 'package:shatab/core/routing/app_routes.dart';
 import 'package:shatab/core/theme/app_theme.dart';
 import 'package:shatab/core/utils/responsive_extension.dart';
 import 'package:shatab/core/widgets/app_button.dart';
+import 'package:shatab/feats/auth/models/user_role.dart';
 import 'package:solar_icons/solar_icons.dart';
 import '../../../../core/utils/auth_validators.dart';
 import '../../widgets/auth_header.dart';
@@ -11,7 +12,6 @@ import '../../widgets/auth_success_dialog.dart';
 import '../../widgets/auth_switch_prompt.dart';
 import '../../widgets/auth_text_field.dart';
 import '../../widgets/social_auth_section.dart';
-
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -39,6 +39,11 @@ class _LoginPageState extends State<LoginPage> {
       context: context,
       title: 'تم تسجيل الدخول بنجاح',
       message: 'أهلاً بعودتك إلى شطب',
+      onContinue: () => Navigator.of(context).pushNamedAndRemoveUntil(
+        AppRoutes.main,
+        (route) => false,
+        arguments: UserRole.homeowner,
+      ),
     );
   }
 
