@@ -6,6 +6,7 @@ import '../../feats/auth/register/ui/register_page.dart';
 import '../../feats/auth/widgets/role_selection_page.dart';
 import '../../feats/onboarding/ui/onboarding_page.dart';
 import '../../feats/auth/models/user_role.dart';
+import '../../feats/main/ui/main_page.dart';
 
 class AppRouter {
   AppRouter._();
@@ -22,6 +23,10 @@ class AppRouter {
         final arguments = settings.arguments;
         final role = arguments is UserRole ? arguments : UserRole.homeowner;
         return _slideFade(RegisterPage(role: role), settings);
+      case AppRoutes.main:
+        final arguments = settings.arguments;
+        final role = arguments is UserRole ? arguments : UserRole.homeowner;
+        return _fade(MainPage(role: role), settings);
       case AppRoutes.splash:
       default:
         return _fade(const SplashPage(), settings);

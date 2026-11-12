@@ -8,7 +8,6 @@ import 'package:shatab/core/widgets/app_button.dart';
 import 'package:shatab/feats/auth/models/auth_options.dart';
 import 'package:shatab/feats/auth/models/user_role.dart';
 import 'package:solar_icons/solar_icons.dart';
-
 import '../../../../core/utils/auth_validators.dart';
 import '../../widgets/auth_header.dart';
 import '../../widgets/auth_scaffold.dart';
@@ -20,7 +19,6 @@ import '../../widgets/auth_text_field.dart';
 import '../../widgets/portfolio_picker.dart';
 import '../../widgets/step_indicator.dart';
 import '../../widgets/terms_checkbox.dart';
-
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key, required this.role});
@@ -111,6 +109,11 @@ class _RegisterPageState extends State<RegisterPage> {
       message: _isProvider
           ? 'أهلاً بك في شطب، ملفك المهني جاهز لاستقبال العملاء'
           : 'أهلاً بك في شطب، يمكنك الآن البدء في مشروعك',
+      onContinue: () => Navigator.of(context).pushNamedAndRemoveUntil(
+        AppRoutes.main,
+        (route) => false,
+        arguments: widget.role,
+      ),
     );
   }
 
