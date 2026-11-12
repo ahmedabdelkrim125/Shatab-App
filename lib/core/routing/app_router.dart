@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shatab/core/routing/app_routes.dart';
 import 'package:shatab/feats/splash/splash_page.dart';
+import '../../feats/auth/login/ui/login_page.dart';
+import '../../feats/auth/register/ui/register_page.dart';
+import '../../feats/auth/widgets/role_selection_page.dart';
 import '../../feats/onboarding/ui/onboarding_page.dart';
+import '../../feats/auth/models/user_role.dart';
 
 class AppRouter {
   AppRouter._();
@@ -11,7 +15,13 @@ class AppRouter {
       case AppRoutes.onboarding:
         return _fade(const OnboardingPage(), settings);
       case AppRoutes.login:
-        return _slideFade(const _LoginPlaceholder(), settings);
+        return _slideFade(const LoginPage(), settings);
+      case AppRoutes.roleSelection:
+        return _slideFade(const RoleSelectionPage(), settings);
+      case AppRoutes.register:
+        final arguments = settings.arguments;
+        final role = arguments is UserRole ? arguments : UserRole.homeowner;
+        return _slideFade(RegisterPage(role: role), settings);
       case AppRoutes.splash:
       default:
         return _fade(const SplashPage(), settings);
@@ -50,14 +60,5 @@ class AppRouter {
         );
       },
     );
-  }
-}
-
-class _LoginPlaceholder extends StatelessWidget {
-  const _LoginPlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text('تسجيل الدخول')));
   }
 }
