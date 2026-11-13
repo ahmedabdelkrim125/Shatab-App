@@ -58,8 +58,7 @@ class _AuthTextFieldState extends State<AuthTextField> {
       validator: widget.validator,
       obscureText: widget.isPassword && _obscure,
       keyboardType:
-          widget.keyboardType ??
-          (_multiline ? TextInputType.multiline : null),
+          widget.keyboardType ?? (_multiline ? TextInputType.multiline : null),
       textInputAction: widget.textInputAction,
       onFieldSubmitted: widget.onSubmitted,
       autofillHints: widget.autofillHints,
@@ -87,7 +86,9 @@ class _AuthTextFieldState extends State<AuthTextField> {
             ? IconButton(
                 onPressed: () => setState(() => _obscure = !_obscure),
                 icon: Icon(
-                  _obscure ? SolarIconsOutline.eye : SolarIconsOutline.eyeClosed,
+                  _obscure
+                      ? SolarIconsOutline.eye
+                      : SolarIconsOutline.eyeClosed,
                   size: 22.sp,
                   color: AuthStyles.iconColor,
                 ),

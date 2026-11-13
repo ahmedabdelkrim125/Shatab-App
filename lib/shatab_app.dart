@@ -3,7 +3,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shatab/core/routing/app_router.dart';
 import 'package:shatab/core/routing/app_routes.dart';
 import 'package:shatab/core/theme/app_theme.dart';
-
 import 'core/utils/responsive_extension.dart';
 
 class ShatabApp extends StatelessWidget {

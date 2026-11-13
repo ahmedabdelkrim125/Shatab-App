@@ -249,8 +249,7 @@ class _AppButtonState extends State<AppButton>
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     final local = ((_loop.value - 0.5) / 0.5).clamp(0.0, 1.0);
     final pulse = w.animateIcon ? math.sin(math.pi * local) : 0.0;
-    final dx =
-        pulse * 5 * (isRtl ? -1 : 1) * (w.reverseIconMotion ? -1 : 1);
+    final dx = pulse * 5 * (isRtl ? -1 : 1) * (w.reverseIconMotion ? -1 : 1);
 
     final moving = Transform.translate(offset: Offset(dx, 0), child: icon);
     final boxed = w.iconAtEdge || w.iconBackgroundColor != null;
@@ -261,8 +260,7 @@ class _AppButtonState extends State<AppButton>
       height: w.iconContainerSize.w,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color:
-            w.iconBackgroundColor ?? AppColors.white.withValues(alpha: 0.18),
+        color: w.iconBackgroundColor ?? AppColors.white.withValues(alpha: 0.18),
         borderRadius: BorderRadius.circular(w.iconContainerRadius.r),
       ),
       child: moving,
@@ -326,15 +324,9 @@ class _AppButtonState extends State<AppButton>
       return Row(
         mainAxisSize: MainAxisSize.max,
         children: [
-          if (w.iconAtStart)
-            icon
-          else
-            SizedBox(width: w.iconContainerSize.w),
+          if (w.iconAtStart) icon else SizedBox(width: w.iconContainerSize.w),
           Expanded(child: Center(child: label)),
-          if (w.iconAtStart)
-            SizedBox(width: w.iconContainerSize.w)
-          else
-            icon,
+          if (w.iconAtStart) SizedBox(width: w.iconContainerSize.w) else icon,
         ],
       );
     }

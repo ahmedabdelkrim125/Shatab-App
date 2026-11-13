@@ -68,11 +68,8 @@ abstract final class AppTextStyles {
     color: AppColors.primary,
   );
 
-  static TextStyle get onboardingTitle => _base.copyWith(
-    fontSize: 30.sp,
-    fontWeight: FontWeight.w800,
-    height: 1.5,
-  );
+  static TextStyle get onboardingTitle =>
+      _base.copyWith(fontSize: 30.sp, fontWeight: FontWeight.w800, height: 1.5);
 
   static TextStyle get onboardingDescription => _base.copyWith(
     fontSize: 16.sp,

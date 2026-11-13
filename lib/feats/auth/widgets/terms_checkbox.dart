@@ -57,7 +57,10 @@ class TermsCheckbox extends FormField<bool> {
                            style: AuthStyles.body.copyWith(height: 1.5),
                            children: [
                              const TextSpan(text: 'أوافق على '),
-                             TextSpan(text: 'الشروط والأحكام', style: linkStyle),
+                             TextSpan(
+                               text: 'الشروط والأحكام',
+                               style: linkStyle,
+                             ),
                              const TextSpan(text: ' و'),
                              TextSpan(text: 'سياسة الخصوصية', style: linkStyle),
                            ],

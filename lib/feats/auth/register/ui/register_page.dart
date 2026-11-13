@@ -177,8 +177,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 options: AuthOptions.governorates,
                 initialValue: _governorate,
                 onChanged: (value) => _governorate = value,
-                validator: (value) =>
-                    AuthValidators.requiredSelection(value, 'من فضلك اختر المحافظة'),
+                validator: (value) => AuthValidators.requiredSelection(
+                  value,
+                  'من فضلك اختر المحافظة',
+                ),
               ),
             AuthTextField(
               controller: _passwordController,

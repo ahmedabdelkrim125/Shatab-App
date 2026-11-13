@@ -20,8 +20,11 @@ class AuthStyles {
   static TextStyle get subtitle =>
       TextStyle(fontSize: 15.sp, color: bodyColor, height: 1.5);
 
-  static TextStyle get input =>
-      TextStyle(fontSize: 15.sp, color: titleColor, fontWeight: FontWeight.w500);
+  static TextStyle get input => TextStyle(
+    fontSize: 15.sp,
+    color: titleColor,
+    fontWeight: FontWeight.w500,
+  );
 
   static TextStyle get hint => TextStyle(fontSize: 15.sp, color: bodyColor);
 

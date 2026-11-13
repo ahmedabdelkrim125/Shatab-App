@@ -140,10 +140,9 @@ class _CircleRevealClipper extends CustomClipper<Path> {
         math.sqrt(size.width * size.width + size.height * size.height) /
         2 *
         fraction;
-    return Path()
-      ..addOval(
-        Rect.fromCircle(center: size.center(Offset.zero), radius: radius),
-      );
+    return Path()..addOval(
+      Rect.fromCircle(center: size.center(Offset.zero), radius: radius),
+    );
   }
 
   @override

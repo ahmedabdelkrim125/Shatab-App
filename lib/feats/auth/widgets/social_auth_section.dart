@@ -73,7 +73,10 @@ class _SocialButton extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: radius,
-        child: SizedBox(height: 54.h, child: Center(child: child)),
+        child: SizedBox(
+          height: 54.h,
+          child: Center(child: child),
+        ),
       ),
     );
   }
