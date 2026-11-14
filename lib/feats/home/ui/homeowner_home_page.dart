@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shatab/core/utils/responsive_extension.dart';
+import '../../../core/utils/responsive_extension.dart';
 import 'widgets/featured_providers_section.dart';
 import 'widgets/home_header.dart';
-import 'widgets/how_it_works_section.dart';
 import 'widgets/promo_banner_carousel.dart';
 import 'widgets/service_categories_section.dart';
 import 'widgets/start_project_section.dart';
+import 'widgets/verified_projects_section.dart';
 
 class HomeownerHomePage extends StatelessWidget {
   const HomeownerHomePage({super.key});
@@ -27,7 +27,7 @@ class HomeownerHomePage extends StatelessWidget {
           SizedBox(height: 24.h),
           const FeaturedProvidersSection(),
           SizedBox(height: 24.h),
-          const HowItWorksSection(),
+          const VerifiedProjectsSection(),
         ],
       ),
     );
